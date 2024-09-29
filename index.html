@@ -78,10 +78,20 @@
             // Simple responses based on user input
             if (input.toLowerCase().includes('hello')) {
                 return "Hi there! How can I help you?";
-            } else if (input.toLowerCase().includes('bye')) {
-                return "Goodbye! Have a great day!";
+            } else if (input.toLowerCase().includes('how many anomalies')) {
+                if(input.toLowerCase().includes('chilled water')){
+                    return "There are __ anomalies for chilled water meters currently.";
+                } if(input.toLowerCase().includes('electricity')){
+                    return "There are __ anomalies for electricity meters currently.";
+                } if(input.toLowerCase().includes('steam')){
+                    return "There are __ anomalies for steam meters currently.";
+                }else{
+                    return "There are __ total anomalies currently.";
+                }
+            } else if(input.toLowerCase().includes('temperature')){
+                return "The current temperature is __";
             } else {
-                return "I'm not sure how to respond to that.";
+                return "I'm sorry, I don't understand the question.";
             }
         }
     </script>
